@@ -100,7 +100,7 @@ class DB {
 
         try {
             const connection = result.collection(collectionName);
-            const record = await connection.find(parameter);
+            const record = await connection.find(parameter).toArray();
             if (!record) {
                 return wrapper.error('Data not found!');
             }
